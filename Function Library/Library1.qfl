@@ -1,0 +1,11 @@
+﻿Public Function open_website
+	datatable.ImportSheet "C:\Users\Asif\Desktop\CF_FINAL\TestData\Import-Export.xls",1,"Global"
+	ExecuteFile("C:\Users\Asif\Desktop\CF_FINAL\Locators\xpath.txt")
+	URL="https://www.commonfloor.com/"
+	SystemUtil.Run "Firefox",URL
+End Function
+
+Public Function close_website
+	datatable.ExportSheet "C:\Users\Asif\Desktop\CF_FINAL\Import-Export.xls","Global",1
+	Browser("Property in India | Real").Close
+End Function
